@@ -1,17 +1,13 @@
 'use strict'
-//hacer un programa que nos diga si un numero es par o impar
-//tiene que tener ventana prompt
-//si numero non valido que nos pida de nuevo el numero(parseInt)
-//while is NaN, se non pe un numero il loop continua e continuerá a salirme il prompt
-//con el if indichiamo se è pari o dispari
-//faccio un solo prompt per una sola variabile
-var number = parseInt(prompt("introduce un numero", 0));
+// Mostrami se il numero introdotto dallo user è pari o dispari. Se lo user introduce un NaN richiedi di inserire un numero
 
-while(isNaN(number)){
-    number = parseInt(prompt("introduce un numero",0));
+var num = parseInt(prompt("Introduci un numero", 0));
+
+while(isNaN(num)){
+    num = parseInt(prompt("Introduci un numero",0));
 }
-if(number % 2 == 0){
-    alert("El numero es par");
+if(num % 2 == 0){
+    alert("Il numero è pari");
 }else{
-    alert("El numero es impar");
+    alert("Il numero è dispari");
 }
