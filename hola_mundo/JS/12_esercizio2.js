@@ -25,5 +25,5 @@ do{
 
 }while(numero >=0) //il loop continua fino a quando non inseriamo un numero negativo
 
-alert("La somma di tutti i numeri è " + suma)
-alert("La media è " + (suma/contador));
+alert("La somma di tutti i numeri è " + sum)
+alert("La media è " + (sum/contatore));
