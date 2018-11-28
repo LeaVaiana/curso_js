@@ -1,30 +1,29 @@
 'use strict'
 
-// utilizazndo un bucle, mostrar la suma y la media de los numeros introducidos (resultado de la suma entre numero de elemento que se han sumado(intentos)) ovvero suma/contador
-//hasta introducir un numero negativo y en este caso mostrar el resultado, se l usuario non mette un numero (is NaN) lo mettiamo uguale a zero
-// con il parseint trasformiamo la stringa in numero, se mettiamo un numero minore di zero, ci mostra il risultato e si fa un break del loop
-//while(numero >=0, solo in questo caso va a continuare a ejecutarse el loop
-//usiamo Do WHILE
+// Mostrare la somma e la media dei numeri inseriti dallo user. Definiamo quindi le variabili somma e contatore (media = somma/contatore)
+// Se lo user introduce un NaN, considerarlo come zero. 
+// Se lo user inserisce un numero negativo si interrompe il loop e ci dará il risultato di somma e media
 
-var suma = 0;
-var contador = 0; //in console.log mi stampa l iterazione
+
+var sum = 0;
+var contatore = 0;
 
 do{
-    var numero = parseInt(prompt("introduce numeros hasta que metas uno negativo", 0));
+    var numero = parseInt(prompt("Introduci un numero fino a quando non ne introdurrai uno negativo", 0));
 
     if(isNaN(numero)){
         numero = 0;
 
     }else if(numero >= 0){
-        suma = suma + numero; // suma += numero
+        sum = sum + numero; // suma += numero
 
-        contador++;
+        contatore++;
     }
-    console.log(suma);
-    console.log(contador);
+    console.log(sum);
+    console.log(contatore);
 
 
-}while(numero >=0)
+}while(numero >=0) //il loop continua fino a quando non inseriamo un numero negativo
 
-alert("la suma de todos los numeros es " + suma)
-alert("la media es " + (suma/contador));
+alert("La somma di tutti i numeri è " + sum)
+alert("La media è " + (sum/contatore));

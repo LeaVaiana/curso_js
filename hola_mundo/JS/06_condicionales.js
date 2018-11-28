@@ -26,9 +26,6 @@ if(edad >= 18){
     console.log(nombre+ " tiene " +edad+" años");
 }
 
-//nuovo esempio: non funziona, non so dov e l errore e in piú mi fa impazzire il visula code
-
-
 
 var edad = 30;
 var nombre = "Federico";
@@ -42,4 +39,4 @@ var nombre = "Federico";
     console.log(nombre + " sei giovane" + " hai"+ edad + " años e sei mio marito");
 }
 
-// 
+

@@ -1,30 +1,25 @@
 'strict use'
 
-//funciones: agrupacion reutilizable de un conjunto de istrucciones
+//FUNZIONI: gruppo di blocchi di codice riutilizzabili
 
-//function calculadora(){
- //   return "Hola"
+//function nomefunzione (){
+//   codice
 //}
-//para invocar una funcion la llamo por nombre, el console.log lo posso avere dentro la funzione
-//console.log(calculadora)
 
-//DEFINO LA FUNCIÓN
-function calculadora(){
-    //DEFINO LAS INSTRUCCIONES
-    console.log("Hola");
-    console.log("ciao");
 
-    return "hola soy yo"; //opzionale, se lo voglio vedere lo vedo come stringa in consola, quando la invoco, altrimenti non lo vedo
+//definisco la funzione
+function test(){
+    //definisco le istruzioni
+    console.log("Blocco di codice1");
+    console.log("Blocco di codice2");
+
+    return "Posso ritornare in risultato";
 }
-//PERCHE STAMPI IN CONSOLA DEVO CHIAMARLA:
-calculadora();
 
-//posso anche metterla dentro una variabile
-var resultado = calculadora();
+//Chiamo la funzione, opz 1:
+test();
 
-console.log(resultado);
+//opz 2: posso metterla dentro una variabile
+var risultato = test();
 
-//un afuncion puede tb recibir parametros
-
-
-
+console.log(risultato);

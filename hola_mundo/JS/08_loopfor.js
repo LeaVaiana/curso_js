@@ -1,5 +1,5 @@
 'use strict'
-//loop for: struttura di control che si ripete varie volte
+//loop for: struttura di controllo che si ripete varie volte
 
 //mostrare tutti i numeri da 1 a 100, creo la variabile i gli do il valore a cui voglio arrivare
 //var i= 0, è il contador, variabile che si va aggiornando a ogni loop

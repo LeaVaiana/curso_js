@@ -7,14 +7,13 @@ var year = 2018;
 
 while(year <=2051){
     console.log("siamo nell'anno "+year);
-
-    year++; //attenzione se non metto questo sará un loop infinito
+    year++; //importante definire l'incremento per evitare un loop infinito
 }
 
-//operador de decremento
+//operatore decrescente
 year --
 
-//do while, ci permette prima eseguire un bloque de instrucción y despues evaluar la condicion
+//DO WHILE: ci permette prima eseguire un bloque de instrucción y despues evaluar la condicion
 //se year è diverso da 20, eseguimo questo alert
 
 var years = 30;
