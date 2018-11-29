@@ -1,5 +1,6 @@
 'use strict'
 
+
 //Funzioni dentro funzioni, riscrivo la funzione dell'esercizio anteriore estrapolando il corpo delle funzioni fuori dalla funzione principale.
 
 function byConsole (num1, num2){
