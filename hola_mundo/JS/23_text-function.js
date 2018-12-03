@@ -78,3 +78,22 @@ console.log(ricerca);//false perche la stringa non finisce con questa
 var ricerca = texto3.includes("lunga");
 console.log(ricerca); //true perche la stringa contiene la parola lunga
 
+//replace (per rimpiazzare un testo, aggiungendo un secondo parametro alla funzione)
+var ricerca = texto3.replace("stringa" , "catena");
+console.log(ricerca);//questa è una catena piú lunga, di nuovo stringa
+
+//slice, mi ritorna la stringa a partire dall indice indicato
+var ricerca = texto3.slice(5);
+console.log(ricerca);//a è una stringa piú lunga, di nuovo stringa (mi ha tagliato dalla stringa "quest")
+//se con slice uso un secondo argomento
+var ricerca = texto3.slice(5, 10);
+console.log(ricerca); //a è u (mi ritorna solo la stringa tra gli indici 5 e 10)
+
+//split
+var ricerca = texto3.split();
+console.log(ricerca)// ["questa è una stringa piú lunga, di nuovo stringa"]
+
+var ricerca = texto3.split(" "); //uso lo spazio come separatore nella stringa
+console.log(ricerca)//["questa", "è", "una", "stringa", "piú", "lunga,", "di", "nuovo", "stringa"]
+
+//trim (mi toglie lo spazio prima e dopo della stringa)
