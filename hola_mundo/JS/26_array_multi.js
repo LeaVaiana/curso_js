@@ -64,8 +64,4 @@ console.log(categoria)//["horror", "drama", "commedia", "azione"]
 
 
 
-//ricorrere arrays con for in
-
-
-//cercare in un array
 
