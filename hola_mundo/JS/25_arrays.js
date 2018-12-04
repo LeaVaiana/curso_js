@@ -42,8 +42,41 @@ for(var i =0; i<lingue.length; i++){
 }
 document.write("</ul>");*/
 
+
+//RICORRERE UN ARRAY
+
 //soluzione con il metodo for each (non itera, scorre lungo tutto l'array)
 
 lingue.forEach((elemento)=>{ //funzione di callback che riceverá elemento
     document.write("<li>" + elemento + "</li>");
 });
+//seconda opzione per ricorrere arrays con for in
+document.write("<ul>")
+for (let i in lingue){ //for in
+    document.write("<li>" + lingue[i] + "</li>");
+}
+
+document.write("</ul>")
+
+
+
+//cercare in un array (definisco la variabile, nome dell'array.find. Il metodo find contiene una funzione di callback
+var lingue = new Array("italiano","spagnolo","francese")
+
+var ricerca = lingue.find(function(lingue){
+    return lingue == "italiano";
+});
+
+console.log(ricerca);//italiano
+//codice piú corto con la funzione callback freccia
+var ricerca = lingue.find(lingue => lingue =="spagnolo");
+console.log(ricerca); //spagnolo
+
+//findIndex
+var ricerca = lingue.findIndex(lingue => lingue =="spagnolo");
+console.log(ricerca); //1
+
+//metodo some per cercare se un prezzo è maggiore di un certo valore
+var prezzo = [10, 20, 50, 70];
+var ricerca = prezzo.some(prezzo => prezzo >= 20);
+console.log(ricerca); //true
