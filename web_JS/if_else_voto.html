@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NOTA</title>
+    <script type = "text/javascript">
+
+        var voto= prompt("Introduci il voto");
+
+if(isNaN(voto)){//funzione necessario perche voto sia un numero, come prima funzione perchè è la piu restrittiva (if(!isNaN(voto)) validiamo che sia numerica)
+    document.write("Nota non numerica");
+}else if(voto>10||voto < 0){//metterlo come seconda condizione perchè è la condizione piú restrittiva
+    document.write("Nota no valida");
+}else if(voto==10){//seconda condizione piú restrittiva  (se mi esegue prima il voto>5 mi darebbe come risultato aprobado)
+    document.write("Sei una matricula de honor!!!");
+}else if(voto==7){//bisogna metterlo prima del 5)
+    document.write("Notable");
+}else if(voto>5){
+    document.write("Aprobado");
+}else if(voto==5){
+    document.write("Por los pelos");
+}else{
+    document.write("Suspenso :(")
+}
+
+
+
+
+
+    
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

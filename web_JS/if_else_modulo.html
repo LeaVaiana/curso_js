@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+    //solicitar numero
+    var num=prompt("inserisci un numero");
+    //for loop entre 0 y el numero introducido
+    for(i=0; i<=num; i++){
+        //validar si es divisible entre 3 y 5
+        if(i%3==0 && i%5==0){
+        document.write(i + " è multiple di 3 e 5 <br>");
+        //validar si es divisible entre 3
+        }else if(i%3==0){
+        document.write(i + " è multiple di 3 <br>");
+        //validar si es divisible entre 5
+        }else if(i%5==0){
+        document.write(i + " è multiple di 5 <br>");  
+        }else{
+        document.write(i + "<br>");
+        }
+    };
+    
+    
+    
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
