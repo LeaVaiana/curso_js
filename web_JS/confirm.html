@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prompt</title>
+    <script type="text/javascript">
+    var numero = prompt("introduci un testo");//solo valori di testo
+    document.write(numero);
+    
+    numero = parseInt(numero)//adesso la variabile è un numero
+    document.write("<br>");
+    document.write(numero + 1);
+
+    var numero= parseInt(prompt("introduci un secondo numero"));//posso annidare funzione dentro funzione, se qui aggiunog un testo otteno un NaN
+
+    /*imprimir la suma: esempio di annidamento di funzioni
+    document.write(parseInt(prompt("introduci un secondo numero"))+1), ma è troppo annidamento, il codice si fa illeggibile*/
+
+
+
+    //CONFIRM
+    var decision = confirm("accetti?");
+    document.write(decision); //no ritorna false, ok ritorna true
+
+
+    
+
+
+
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
