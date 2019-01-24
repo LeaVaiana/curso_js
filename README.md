@@ -1,1 +1,4 @@
-# curso_js
+# web development training
+
+JS exercize
+
