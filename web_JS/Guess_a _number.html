@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+    //assegno numero segreto a una variabile
+    var secret_num = 5;
+    //for loop di 3 iterazioni
+    for(i=0; i<3; i++){
+        //chiedere numero allo user e conservarlo in una variabile
+        var num_user=parseInt(prompt("Indovina il numero"));
+        //se il numero coincide "hai vinto" ed esci dal loop (break)
+        if (num_user==secret_num){
+            alert("Indovinato!");
+            break;
+        //se non ha indovinato, "Numero incorretto ti rimangono x possibilitá"
+        }else{
+            var intentos = 3-i-1;
+            alert("numero incorretto, ti rimangono " + intentos + " possibilitá")
+        }
+    }
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
