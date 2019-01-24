@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Hola_mundo</title>
+    <meta charset="utf-8">
+    <script type="text/javascript">
+        /* document.write("hola mundo");
+        alert("io sono un'allerta");
+        console.log("io vado in consola!")
+        window.alert("hola")
+        io sono un commento multilinea*/
+        //io sono un commento
+        //VARIABILI (bisogna prima definire la variabile, altrimenti otterrei undefined nel browser)
+        //Variabili di testo
+        var texto ="hola mundo";
+        document.write("<h1>texto</h1>");//ci sono le virgolette, mi stampa quello che ho dentro le virgolette, quindi mi da testo
+        document.write("<br>");
+        document.write(texto);//mi ritorna il valore della variabile perche non ho virgolette
+        document.write("<br>");
+        document.write("<h1>"+texto+"</h1>");//concateno, quindi mi da il valore della variabile con un h1
+        document.write('<h1>"texto"</h1>');//perche mi stampi anche le virgolette doppie
+        document.write('<h1>\'texto\'</h1>');//perchè mi stampi virgolette singole
+        
+        //Variabili numeriche
+        var i = 3;
+        var j = 5;
+        document.write(i+j);
+
+        document.write("<br>");
+        var i = "3";//String
+        var j = 5;
+        document.write(i+j);//il risultato è un testo
+
+        document.write("<br>");
+        var suma = i + j;//35
+        document.write(suma + 9);//il risultato della somma è di nuovo un testo 359, perchè il 34 è un testo
+
+        var k = 5;
+        document.write("<br>");
+        document.write(j+k);//10 somma tra due numeri
+        document.write("<br>");
+        document.write(j,k);//55 concateno con la virgola
+
+        //convertir variabile testo a variabile numerica
+        suma= parseInt(suma);//no pongo var perchè è stata giá dichiarata, ma adesso le cambio il valore, si lleva var la estamos declarando la primera vez, funziona pero no es correcto
+        document.write("<br>");//mi ha convertito l'ultima somma 35, in numero. Adesso il 35 è un numero
+        document.write(suma);
+
+        //funzioni composte da due parole: camel case: parseInt
+
+        //Variabilie booleane (true e false, parole riservate di JS)
+        var a = true;
+        var b = false;
+        
+        document.write("<br>");
+        document.write(a,b);//truefalse
+
+        //constantes
+
+        const PI = 3.14;
+        document.write(PI);//3.14, e non posso piú cambiarne il suo valore in console otterrei PI è stato giá dichiarato
+
+        
+
+
+       
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
