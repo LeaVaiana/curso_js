@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Numeri pari</title>
+    <script type="text/javascript">
+    //chiedo due numeri e li converto in numeri con il parseInt
+    var num1 = parseInt(prompt("introduci un numero"));
+    var num2 = parseInt(prompt("introduci un secondo numero"));
+//Si los dos números son pares mostrar el mensaje: “los dos números son pares”
+//Si al menos uno es par mostrar el mensaje: “uno de los números es par”
+//Si ninguno es par mostrar el mensaje “los dos números son impares”
+
+if (num1%2==0 && num2%2==0){
+    document.write("i due numeri sono pari");//è la piú restrittiva, entrambi devono essere pari
+}else if (num1%2==0 || num2%2==0){
+    document.write("Uno dei due numeri è pari");
+}else{
+    document.write("I due numeri sono dispari");
+}  
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
