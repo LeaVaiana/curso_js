@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tavola delle moltiplicazioni</title>
+    <script type="text/javascript">
+    //Chiedere allo user di inserire un numero tra 1 e 10
+
+       do{         
+                var num = prompt("Introduci un numero tra 1 e 10");
+
+                for(i=1; i<=10; i++){
+                    if(isNaN(num)){ //condizione piú restrittiva
+                    document.write("Questo non è un numero");
+                }else if(num<0 || num >10) {
+                    document.write("Ti ho detto di inserire un numero tra 1 e 10");
+                }else{
+                    document.write(num + "*" + i + "=" + num * i + "<br>");
+                }
+            }
+            //una volta completato il primo loop, chiediamo se vuole continuare moltiplicando
+            var seguirJugando = confirm("Un'altra tavola"); //conserviamo il valore della funzione confirm dentro della variabile seguirJugando
+        } 
+        while (seguirJugando == true); //seguir jugando è la variabile, condizione di uscita del while, se è true continua a compiersi la condizione, se è false non si compie piú e sale del loop
+                
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
