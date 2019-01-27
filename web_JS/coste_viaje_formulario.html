@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//1 creo la funzione viaje, faccio il check con un alert che funzioni l'evento sul bottone
+
+		//COSTO HOTEL
+
+        function hotel(n1){
+			var total = n1 * 60; 
+            return total; 
+        };
+
+    	//COSTO VOLO
+
+    
+        function avion(citta){ 
+           
+            switch(citta){
+                case "Paris":
+                    costeAvion= 180;
+                    break;
+                case "Boston":
+                    costeAvion= 600;
+                    break;
+                case "Londres":
+                    costeAvion= 120;
+                    break;
+                default: 
+                alert("non ci sono voli");
+            }
+            return costeAvion;
+        }
+
+        //COSTO AFFITTO MACCHINA
+
+		function coche(d) {
+			//calcular el precio total
+			var precio = d * 40;
+
+			//aplicar descuento
+			if (d >= 7) {
+				precio = precio -50;
+			} else if (d >= 3) {
+				precio = precio - 20;
+			}
+
+			return precio;
+		}
+		
+
+        //COSTO TOTAL  
+         
+        function viaje(){ //tolgo i parametri di entrata nell'ultima funzione perche li recupera dal formulario
+		   var night = document.getElementById("noches").value;//stesso id dell'etichetta, con .value ricupero un valore
+			//alert(night); verifico con il submit che funzioni
+			var citta = document.getElementById("ciudad").value;
+			//alert(citta);
+			var dias = document.getElementById("dias").value;
+			//alert(dias);
+			var precio = hotel(night) + avion(citta) + coche(dias);
+			//return precio; envio con il formulario
+			//enviar el precio al formuario:
+			document.getElementById("total").value = precio;
+        }
+        //var costeViaje = viaje(night,price,city,day)//la elimino perche la chiamo con onclik
+		//alert(costeViaje); me lo dice il formulario
+		
+	</script>
+	<style type="text/css">
+		label {
+			width: 150px;
+			display: inline-block;
+		}
+		form {
+			width: 500px;
+			margin:auto;
+			border: 2px solid grey;
+			box-shadow: 2px 2px 2px grey;
+			padding: 25px;
+		}
+	</style>
+</head>
+<body>
+	<!--tutte le etichette che interagiscono con JS devono avere un id-->
+	<!--al button bisogna aggiungere l'evento onclick per eseguire la funzione viaje()-->
+	<form>
+		<label>Numero de noches</label>
+		<input type="number" id='noches'><br><br>
+		<label>Ciudad</label>
+		<select id='ciudad'>
+			<option>Paris</option>
+			<option>Londres</option>
+			<option>Boston</option>
+		</select><br><br>
+		<label>Días alquiler</label>
+		<input type="number" id='dias'><br><br>
+		<input type="button" value='Enviar' onclick="viaje()"><br><br><!--non usiamo un submit, perche altrimenti i dati vengono inviati al servidor-->
+		<label>Precio total</label>
+		<input disabled type="text" id='total'><!--disabled, cosí lo user non puó scrivere-->
+	</form>
+</body>
+</html>
