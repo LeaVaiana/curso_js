@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Hotel</title>
+    <script>
+        //1 chiedere quanti notti e il costo della notte
+        var night = parseInt(prompt("Quante notti vuoi soggiornare?"));
+        var price = 60;
+
+        //2 chiamare la funzione definita sotto e ne conservo il risultato in una variabile
+        var costeHotel= hotel(night,price)
+      
+        //3 mostro il risulato
+        alert(costeHotel)
+        
+        //4 Definiamo la funzione (la possiamo mettere all'inizio o fine, non ha importanza perche la funzione viene caricata all'inizio
+        function hotel(n1, n2){ //i parametri di entrata li posso chiamare con un altro nome
+            var total = n1 * n2; 
+            return total; //ritorna il valore della variabile resultado fuori la funzione, quindi creo una nuova variabile per prendere questo valore, passo 2
+        };
+
+        
+    
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

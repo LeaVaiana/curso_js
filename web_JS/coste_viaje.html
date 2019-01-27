@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Hotel</title>
+    <script>
+    //COSTO HOTEL
+
+        //1 chiedere quanti notti e il costo della notte
+        var night = parseInt(prompt("Quante notti vuoi soggiornare?"));
+        var price = 60;
+
+        //2 chiamare la funzione definita sotto e ne conservo il risultato in una variabile
+        //var costeHotel= hotel(night,price)
+      
+        //3 mostro il risultato
+        //alert(costeHotel)
+        
+        //4 Definiamo la funzione
+        function hotel(n1, n2){ //i parametri di entrata li posso chiamare con un altro nome
+            var total = n1 * n2; 
+            return total; //ritorna il valore della variabile fuori la funzione, quindi creo una nuova variabile per prendere questo valore, passo 2
+        };
+
+    //COSTO VOLO
+
+        //1 chiedere nome cittá
+        var city = prompt("Dove vuoi andare?");
+
+        //2 chiamare la funzione definita sotto e ne conservo il risultato in una variabile
+        //var resultadoAvion= avion(city);
+      
+        //3 mostro il risulato
+        //alert(resultadoAvion);
+        
+        //4 Definiamo la funzione 
+        function avion(citta){ 
+           
+            switch(citta){//posso usare cittá o city, indifferentemente
+                case "Paris":
+                    costeAvion= 180;
+                    break;
+                case "Boston":
+                    costeAvion= 600;
+                    break;
+                case "Londres":
+                    costeAvion= 120;
+                    break;
+                default: 
+                alert("non ci sono voli");
+            }
+            return costeAvion;
+        }
+
+        //COSTO AFFITTO MACCHINA
+
+        //1 chiedere quanti giorni vuoi la macchina
+        var day = parseInt(prompt("Per quanti giorni vuoi affittare la macchina?"));
+
+        //2 chiamare la funzione definita sotto e ne conservo il risultato in una variabile
+        //var costeCoche= coche(day);
+      
+        //3 mostro il risulato
+        //alert(costeCoche);
+        
+        //4 Definiamo la funzione
+
+        function coche(giorno){//devo usare la stessa parola come parametro e dentro la funzione
+
+                if (giorno < 3){
+                    var costeCoche = giorno * 40;
+                }else if(giorno >=3 && giorno < 7){
+                    var costeCoche = (giorno * 40) - 20;
+                }else{
+                    var costeCoche = (giorno * 40) - 50;
+                }
+            return costeCoche
+            };
+
+        //COSTO TOTAL  
+        
+        //funzione che cacola il costo totale, elimino le 3 variabili che nelle prime 3 parti mi hanno raccolto i risultati e la corrispondente allerta 
+        function viaje(night,price,city,day){ //devi usare gli stessi nomi delle variabili, cosí possono continuare a raccogliere i risultati del return di ogni funzione
+           var precio = hotel(night,price) + avion(city) + coche(day);
+            return precio;
+        }
+        //chiamo la funzione viaje
+        var costeViaje = viaje(night,price,city,day)//dobbiamo mettere le stesse variabii che sono nel prompt
+        alert(costeViaje);
+         
+    
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Hotel</title>
+    <script>
+        //1 chiedere quanti giorni vuoi la macchina
+        var day = parseInt(prompt("Quante giorni vuoi affittarla?"));
+
+        //2 chiamare la funzione definita sotto e ne conservo il risultato in una variabile
+        var totalCoche= coche(day);
+      
+        //3 mostro il risultato
+        alert(totalCoche);
+        
+        //4 Definiamo la funzione coche
+
+		function coche(giorno) {
+			//calcolare il prezzo totale
+			var costeCoche = giorno * 40;
+
+			//applico lo sconto
+			if (giorno >= 7) {
+				costeCoche = costeCoche -50;
+			} else if (giorno >= 3) {
+				costeCoche = costeCoche - 20;
+			}
+			return costeCoche;
+		}
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
