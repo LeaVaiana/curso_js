@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        var dias = ["Lunedi","Martedi","mercoledi","Giovedi","venerdi","sabato ","domenica"];
+        
+        //1 opzione
+        for (i = dias.length -1; i >=0; i--) { //tolgo un indice per iniziare dall'ultimo elemento che ha indice 6 e non 7
+            document.write (dias[i]); //scrivimi tutti gli elementi dell'array
+            document.write("<br>")
+        }
+        //1 opzione
+        for (i = 0; i <= dias.length - 1; i++) {
+            document.write (dias[i]);
+            document.write("<br>");
+        }
+        //2  opzione
+        for (i in dias){
+            document.write (dias[i]);
+            document.write("<br>");
+        }
+
+        //array asociativo (gli indici sono: nombre, nif, direccion y poblacion)
+        var datosPersona=new Array();
+        datosPersona['nombre'] = 'Luis Rodriguez' 
+        datosPersona['nif'] = '44444444P' 
+        datosPersona['direccion'] = 'c/ Pepe Gotera s/n' 
+        datosPersona['poblacion'] = 'Barcelona'
+        for (i in datosPersona) {
+        document.write(i+' '+datosPersona[i]+'<br>')
+        }
+
+        //array escalar
+        var numeros = [9, 12, 13, 23, 8]//ordena alfabeticamente
+        numeros.sort();
+        for (i in numeros){
+            document.write(numeros[i]);
+            document.write("<br>");
+        }
+
+        //per ordinarlo numericamente
+        var numeros = [9, 12, 13, 23, 8]//ordena alfabeticamente, usiamo una call back function con i parametri sotto
+        numeros.sort(function(a,b){return a - b});
+        for (i in numeros){
+            document.write(numeros[i]);
+            document.write("<br>");
+        }
+
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

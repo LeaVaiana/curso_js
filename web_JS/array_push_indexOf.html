@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Document</title>
+    <script>
+        //definir un array vacio
+        var lista = new Array();
+      
+        //preguntar al usuario que introduzca 5 articolos
+            for (i=0; i<5; i++){
+                var articulo = prompt("Cosa vuoi comprare?");
+                //guardo el articulo en el array 
+                var indice = lista.indexOf(articulo);
+        
+                if (indice == - 1){//se l'articulo non è ancora nella lista della spesa
+                    lista.push(articulo)
+                }else{
+                    //si el articulo existe mostrar un alert 
+                    alert("el articulo existe");
+                    i--//para que no tenga en cuenta esta iteración si el articulo ya existe
+                }
+            }
+
+
+ 
+//mostrar el array
+document.write(arrayCompra);
+document.write("<br>");
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

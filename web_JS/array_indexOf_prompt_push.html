@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        dias = ["lunes", "martes", "miercoles", "jueves"]
+    //buscar un elemento (conservo in una variabile l'indice dell'elemento, se non lo trova mi ritorna -1)
+    var indice = dias.indexOf("miercoles");
+    alert(indice);
+
+    //borrar un elemento
+    if(indice >=0){//comprouebo que el indice non è -1
+    dias.splice(indice, 1);
+    }
+    // stampo l'array
+    for (i in dias){
+        document.write(i + "-->" + dias[i] + "<br>")
+    };
+    
+    
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
