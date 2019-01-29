@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        //calcola numeri di giorni tra data attuale e data passata, abbiamo bisogno di due variabili oggetto di tipo data
+        //inizialmente le due variabili contengono la stessa data
+        var fechaHoy = new Date();
+
+        var fechaDesde = new Date();
+        //aggiorno la fechaDesde e gli assegno il valore del 1 di giugno del 1978
+        fechaDesde.setDate(1);
+        fechaDesde.setMonth(5);
+        fechaDesde.setYear(1978);
+
+        //diferencia en milisegundos tra le due date
+        var ms = (fechaHoy.getTime() - fechaDesde.getTime());
+        document.write(ms/1000/3600/24); //1000 mi da secondi, 3600 mi da ore, 24h mi da giorni
+
+
+    
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
