@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        //crear un array vacio
+        var numeros = new Array ();
+
+        // for loop per inserire 10 numeri aleatori nell'array
+        for (i=0; i<10; i++){
+            numero = Math.floor(Math.random() * 100)+1; //numeros aleatorios
+            numeros.push(numero); //guardar numeros en el array
+        }
+        //recorrer el array elemento a elemento
+            document.write(numeros + "<br>");
+//OPCION 1:
+        //ordenar el array de forma numerica e imprimir el indice 0 y 9;
+            numeros.sort(function(a,b) {return a-b});
+            document.write(numeros); //array ordenado numericamente
+            document.write("<br>");
+            document.write("numero menor: " + numeros[0] + " numero mayor: " + numeros[9]);
+
+//OPCION 2:
+        //creo due variabili mayor y menor
+        var menor = 101 //assegno il maggior numero possibile piú uno
+        var mayor= 0 //assegno il minor numero possibile meno 1
+
+
+        //recorrer el array elemento elemento con un for
+        for (i in numeros){ //for loop especifico opara array
+            //determinar el mayor numero guardado
+            if (numeros[i] > mayor){
+                mayor = numeros[i];
+            }
+            //determinar el menor numero guardado
+            if (numeros[i] < menor){
+                menor = numeros[i];
+            }
+        }
+        //stampare i risultati
+        document.write("<br>");
+        document.write("numero menor: " + menor + " numero mayor: " + mayor);
+
+
+
+
+    /*//Opcion 3, convertire array in una lista con il join e dopo:
+        //determinar el mayor numero guardado
+            document.write(Math.max(numeros));
+            //determinar el menor numero guardado
+            document.write(Math.min(numeros));*/
+        
+
+    
+    
+    
+    
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
