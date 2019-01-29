@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        //abro un documento ya existente en una ventana del tamaño especificado con el blanck me abre una sesion diferente
+        var miVentana = window.open('suprimir_acentos.html','_blank', 'width=400, height=400, left=250, top=50, scrollbars=yes');
+        
+        //posso abilitare un bottone per chiudere la ventana
+        function cerrar(){
+            miVentana.close()
+        }
+
+    </script>
+</head>
+<body>
+    <input type="button" value="cerrar" onclick="cerrar()">
+</body>
+</html>
