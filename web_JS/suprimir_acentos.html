@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        var texto = 'París';
+
+        // transformar un texto a mayúsculas
+        var textoCorregido = texto.toUpperCase()
+
+        document.write(textoCorregido);
+        document.write("<br>");
+        
+
+        // suprimir los acentos
+        textoCorregido = textoCorregido.replace(/[ÁÀÄÂ]/, "A");
+        textoCorregido = textoCorregido.replace(/[ÉÈËÊ]/, "E");
+        textoCorregido = textoCorregido.replace(/[ÍÌÏÎ]/, "I");
+        textoCorregido = textoCorregido.replace(/[ÓÒÖÔ]/, "O");
+        textoCorregido = textoCorregido.replace(/[ÚÙÜÛ]/, "U");
+        document.write(textoCorregido)
+
+        //buscar una palabra en una cadena de texto 
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
