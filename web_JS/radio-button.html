@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+    function enviaFormulario(){
+        //recuperar los radio buttons
+        var radios = document.formulario.radio //conserva il valore dell'elemento che contiene name = formulario / name = radio, recupera un array di 3 elementi
+        //recorrer el array para averiguar que tadio button estè seleccionado
+        for (i in radios){
+            //preguntar si el radio está seleccionado
+            if (radios[i].checked){
+                //recuperar el valor del radio button
+                var valorRadio = radios[i].value; 
+            }
+        } 
+        //alert(valorRadio); con el submit pruebo si funziona la funcion enviaFormulario, mi ritorna l'elemento del formulario checked
+    }
+    
+
+    
+    
+    
+    
+    </script>
+    <title>Document</title>
+</head>
+<body>
+
+        <form name="formulario">
+                <label>1 </label><input type="radio" name="radio" value="Radio1" checked></br> <!--cada radio button comparte stesso name, a jv arriva il value-->
+                <label>2 </label><input type="radio" name="radio" value="Radio2"></br>
+                <label>3 </label><input type="radio" name="radio" value="Radio3"></br>
+                <input type="button" value="Enviar" onclick="enviaFormulario()">
+                </form>
+    
+</body>
+</html>
