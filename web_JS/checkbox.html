@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+    function enviaFormulario(){
+        //recuperar los checkbox
+        var checks = document.formulario.checkbox //conserva il valore dell'elemento che contiene name = formulario / name = radio, recupera un array di 3 elementi
+        //recorrer el array  checks para averiguar que checkbox estan seleccionado, possono essere selezionati tutti, nessuno o qualcuno
+        
+        var valorChecks = new Array();//creato per contenere gli elementi selezionati dallo user
+        for (i in checks){
+            //preguntar si el check está seleccionado
+            if (checks[i].checked){
+                //recupero el valor del check que lo user ha selezionato, necesitamos un array porque puo contenere piu elementi
+                //creamo un array vuoto  (prima del for loop)
+                valorChecks.push(checks[i].value);
+            }
+        } 
+        alert(valorChecks); //con el submit pruebo si funziona la funcion enviaFormulario, mi ritorna l'elemento del formulario checked
+    }
+    
+
+    </script>
+    <title>Document</title>
+</head>
+<body>
+
+        <form name="formulario">
+                <label>1 </label><input type="checkbox" name="checkbox" value="checkbox1"></br>
+                <label>2 </label><input type="checkbox" name="checkbox" value="checkbox2"></br>
+                <label>3 </label><input type="checkbox" name="checkbox" value="checkbox3"></br>
+                <input type="button" value="Enviar" onclick="enviaFormulario()">
+                </form>
+    
+</body>
+</html>
