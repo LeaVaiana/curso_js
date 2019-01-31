@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function enviar() {
+            //recupera el valor de la combo
+            var combo = document.getElementById("comboSeleccion").value
+            //escribe el valor en el input
+            document.getElementById("campoSeleccionado").value = combo
+        } 
+    </script>
+</head>
+<body>
+    <form>
+        <select id="comboSeleccion" onchange="enviar()">
+        <option value="0">Seleccione una opcion, por favor</option><!--se ad ogni etichetta option aggiungiamo il value, l usuario non vedrá piú la parola Opcion1 ma il valore 1-->
+        <option value="1">Opcion 1</option>
+        <option value="2">Opcion 2</option>
+        </select>
+        <input type="text" id="campoSeleccionado"> 
+    </form>
+</body>
+</html>
