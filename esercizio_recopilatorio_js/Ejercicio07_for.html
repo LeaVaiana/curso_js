@@ -1,0 +1,33 @@
+<!--Ejercicio07: (5pt / 1pt) Asignar un número a una variable. Solicitar al usuario un número y, si ambos números coinciden, aparecerá una alerta indicando la coincidencia. Si no coinciden se irá solicitando al usuario que vuelva a introducir otro número. Este proceso se repetirá hasta que:
+ Ambos números coincidan
+ Se consuman 10 intentos sin que el usuario acierte el número guardado en la
+variable
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Esercizio 7</title>
+    <script>
+
+    var num1 = 5;
+
+    for (i=0; i<10; i++){
+        var num2 = parseInt(prompt("introduce un numero"));
+        if (num1 == num2){
+        alert("You got it");
+        break;
+        }else{
+            alert("no has acertado");
+        }
+    }
+
+    
+     
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

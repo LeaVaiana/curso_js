@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<!--Ejercicio08: (6pt / 1pt) A partir del formulario que se adjunta (Ejercicio08.html), cada vez que se pulse sobre el botón ‘enviar’ se ejecutará una función que realizará las siguientes tareas:
+ Recuperar el nombre y apellidos del formulario
+ Guardarlo en un array previa comprobación que no exista con anterioridad (se
+mostrará un alert en caso contrario)
+ Mostrará una alerta de ‘alta efectuada’ (solo en caso que el nombre se haya
+guardado en el array)-->
+<html>
+<head>
+	<title>Ejercicio 8</title>
+	<meta charset="utf-8"/>
+	<style type="text/css">
+		form {width: 300px;background-color: #D3D3D3;margin:auto;padding:20px;}
+	</style>
+	<script>
+		//DEFINIR UN ARRAY VACIO (el array va fuera de la funcion)
+		var nombres = new Array();
+		
+		//DEFINIRE LA FUNZIONE CHE SI ATTIVA CON L'ONCLICK
+		function enviaFormulario(){
+			//recuperar nombre y apellido
+			var nombre = document.getElementById("nombre").value;
+			//alert(name);
+			//Guardo en una variabile l'indice dell'elemento, se non lo trova mi ritorna -1)(Compruebo si está en el array)
+			var indice = nombres.indexOf(nombre);
+
+			if (indice == - 1){//se il nome non è ancora nell' array
+					nombres.push(nombre)
+					alert(nombre + ", sei stato registrato")
+                }else{//si el nombre existe mostrar un alert 
+                    alert("usuario ya registrado");
+                }
+			}
+
+	</script>
+</head>
+<body>
+<div id="container">
+	<form>
+		<label>Nombre y apellidos</label>
+		<input type="text" id="nombre">
+		<br><br>
+		<input type="button" id="enviar" value='Enviar' onclick="enviaFormulario()">
+	</form>
+</div>
+</body>
+</html>

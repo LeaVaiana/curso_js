@@ -1,0 +1,32 @@
+<!--Ejercicio03: (3pt / 1pt) Solicitar un número al usuario y mostrar un mensaje en pantalla en función de las siguientes especificaciones:
+ Si el número es menor que 3 mostrar ‘low’
+ Si se encuentra entre 4 y 5 mostrar ‘medium’
+ Si se encuentra entre 6 y 7 mostrar ‘high’
+ Si es mayor que 7 mostrar ‘danger’
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Esercizio 3</title>
+    <script>
+    var num = parseInt(prompt("Dammi un numero"));
+
+    if (num <= 3) {
+        document.write(num + ": it is low");
+    }else if(num >= 4 && num<=5){
+        document.write(num + ": it is medium");
+    }else if(num >= 6 && num<=7){
+        document.write(num + ": it is high");
+    }else{
+        document.write(num + ": it is DANGER!!!!")
+    }
+    
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

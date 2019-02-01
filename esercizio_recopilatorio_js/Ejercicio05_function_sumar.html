@@ -1,0 +1,32 @@
+<!--Ejercicio05: (3pt / 1pt) Solicitar al usuario dos números. Llamar a una función (utilizando parámetros de entrada) que calculará la suma de los dos números y devuelva el resultado para ser utilizado por un alert situado fuera de ella
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Esercizio 5</title>
+    <script>
+
+    //1 pido dos valores
+    var num1 = parseInt(prompt("Dammi un numero"));
+    var num2 = parseInt(prompt("Dammi un numero"));
+
+    //3 llamo la funcion
+    var resultado = sumar(num1, num2);
+    //4 muestro el resultado
+    alert(resultado); 
+    
+
+    //2 defino la funcion
+    function sumar(x, y){
+        var sum = x + y;
+        return sum;
+    };
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!--Ejercicio06: (4pt /1pt) Solicitar al usuario exactamente cinco nombres de persona (utilizar una estructura de iteración). Cada nombre solicitado se guardará en un array previa comprobación que no se haya introducido previamente, en cuyo caso se mostrará una alerta.
+Cuando se hayan solicitado los cinco nombres se mostrará el contenido del array (un nombre por línia)
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Esercizio 6</title>
+    <script>
+    //definir un array vacio
+    var listaNombre= new Array();
+
+    //preguntar al usuario que introduzca 5 nombres
+    for (i=0; i<5; i++){
+        var nombre=prompt("Introduci un nome");
+        var indice = listaNombre.indexOf(nombre);
+
+        if (indice == -1){
+            listaNombre.push(nombre);
+            document.write(listaNombre[i] + "<br>");//Mostrar el array un nombre cada linea
+        }else{
+            alert("hai giá inserito questo nome");
+            i--
+        }
+    }
+     
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

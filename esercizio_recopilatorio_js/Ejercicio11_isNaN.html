@@ -1,0 +1,27 @@
+<!--Ejercicio11: (2pt). Preguntar al usuario con un prompt que introduzca un número. Codificar la estructura necesaria para que aparezca un alert de ‘valor no válido’ en caso de que:
+ El valor sea menor de 10
+ El valor no sea numérico
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Esercizio 11</title>
+    <script>
+        var num = parseInt(prompt("inserisci un numero maggiore di 10"));
+
+        /*COME FACCIO DA USARE : if (num==isNaN){*/
+
+        if (isNaN (num) || num < 10){  
+            alert("valor no valido");
+        }else
+            {alert("Ok, hai inserito un valore che mi piace");
+        };
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

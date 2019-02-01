@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+	<!--Ejercicio13: (4pt / 1pt) A partir del formulario que se adjunta (Ejercicio13.html). Incorporar el código necesario para recuperar el valor de los checkboxes y el radio button seleccionados
+	Mostrar con alert o document.write el valor de los seleccionados de forma separada.-->
+<head>
+	<title>Ejercicios</title>
+	<meta charset="utf-8"/>
+	<style type="text/css">
+		form {width: 300px;background-color: #D3D3D3;margin:auto;padding:20px;}
+	</style>
+	<script>
+
+		function enviaFormulario(){
+
+			//recuperar los radio buttons
+			var radios = document.form.opcion;
+
+			// recorrer array para averiguar que radio button está seleccionado
+			for (i in radios) {
+				// Preguntar si el radio está seleccionado
+				if (radios[i].checked) {
+					// recuperar el valor del radio button seleccionado
+					var valorRadio = radios[i].value;
+				}
+			}
+			alert(valorRadio);
+
+
+
+        //recuperar los checkbox
+        var checks = document.form.extra //conserva il valore dell'elemento che contiene name = formulario / name = extra, recupera un array di 3 elementi
+        
+		//recorrer el array checks para averiguar que checkbox estan seleccionado, possono essere selezionati tutti, nessuno o qualcuno
+        var valorChecks = new Array();//creato per contenere gli elementi selezionati dallo user
+        for (i in checks){
+            //preguntar si el check está seleccionado
+            if (checks[i].checked){
+                //recupero el valor del check que lo user ha selezionato, necesitamos un array porque puo contenere piu elementi
+                //creamo un array vuoto  (prima del for loop)
+                valorChecks.push(checks[i].value);
+            }
+        } 
+        alert(valorChecks); //con el submit pruebo si funziona la funcion enviaFormulario, mi ritorna l'elemento del formulario checked
+    }
+    
+		
+	</script>
+</head>
+<body>
+<div id="container">
+	<form name='form'>
+		<label>Seleccione opción</label>
+		<span>1</span><input type="radio" name="opcion" value = 'radio1' checked>
+		<span>2</span><input type="radio" name="opcion" value = 'radio2'>
+		<span>3</span><input type="radio" name="opcion" value = 'radio3'>
+		<br><br>
+		<label>Seleccione extras</label>
+		<span>A</span><input type="checkbox" name="extra" value = 'check1'>
+		<span>B</span><input type="checkbox" name="extra" value = 'check2'>
+		<span>C</span><input type="checkbox" name="extra" value = 'check3'>
+		<br><br>
+		<input type="button" id="enviar" value='Enviar' onclick="enviaFormulario()">
+	</form>
+</div>
+</body>
+</html>

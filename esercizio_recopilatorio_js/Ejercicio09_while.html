@@ -1,0 +1,53 @@
+<!--Ejercicio09: (4pt / 1pt) Utilizar la estructura iterativa adecuada para ir informando un array con números aleatorios entre 1 y 50. La iteración se irá repitiendo hasta que se obtenga como número aleatorio el 50, en cuyo caso ya no se incorporarán más números al array
+Al salir del bucle se mostrará en pantalla el contenido del array
+NOTA: Para calcular números aleatorios entre dos rangos: Math.round(Math.random() * (max - min) + min);
+
+Ejercicio10: (2pt / 1pt) A partir del ejercicio anterior, después de mostrar el contenido del array, se recorrerá éste y se mostrará en pantalla el mayor y el menor número almacenado
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Esercizio 9</title>
+    <script>
+        //crear un array vacio
+        var numeros = new Array();
+
+        //opcion mejor: do while
+        //while para insertar numeros aleatorios
+        while(numero != 50){
+            var numero = Math.round(Math.random() * (50 - 1) + 1); //numeros aleatorios
+            numeros.push(numero); //guardar numeros en el array
+        }
+        // stampo l'array
+        for (numero in numeros){
+            document.write(numero + "-->" + numeros[numero] + "<br>")
+        };
+
+        //ESERCIZIO 10:
+
+        //creo due variabili mayor y menor
+        var menor = 51 //assegno il maggior numero possibile piú uno
+        var mayor= 0 //assegno il minor numero possibile meno 1
+
+        //recorrer el array elemento elemento con un for
+        for (numero in numeros){ 
+            //determinar el mayor numero guardado
+            if (numeros[numero] > mayor){
+                mayor = numeros[numero];
+            }
+            //determinar el menor numero guardado
+            if (numeros[numero] < menor){
+                menor = numeros[numero];
+            }
+        }
+        //stampare i risultati
+        document.write("<br>");
+        document.write("numero menor: " + menor + " numero mayor: " + mayor);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

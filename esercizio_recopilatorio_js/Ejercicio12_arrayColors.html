@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<!--Ejercicio12: (3pt / 1pt) A partir del formulario y el array que se adjunta (Ejercicio12.html). Incorporar el código necesario para eliminar la posición del array que corresponda con el elemento introducido por el usuario. Si el elemento no existe, el array no debe quedar incompleto o borrarse otro elemento que no corresponda con el introducido
+-->
+	<title>Ejercicio 12</title>
+	<meta charset="utf-8"/>
+	<style type="text/css">
+		form {width: 300px;background-color: #D3D3D3;margin:auto;padding:20px;}
+	</style>
+	<script>
+		//array de colores
+		var arrayColores = new Array('blanco', 'rojo', 'amarillo', 'verde', 'rosa', 'azul', 'negro');
+
+		function borrar(){
+			//recuperar el color del formulario
+		var color = document.getElementById("elemento").value;
+			//comprobar si existe en el array
+		var indice = arrayColores.indexOf(color);
+			//si existe: borrarlo
+		if (indice >= 0){
+		arrayColores.splice(indice, 1); //indice ci da la posizione che vogliamo cancellare, e dopo 1 quanti elementi vogliamo cancellare
+
+		}else{
+			alert("color no existe");
+		}
+		alert(arrayColores);
+		}
+
+
+	</script>
+</head>
+<body>
+<div id="container">
+	<form>
+		<label>Elemento del array</label>
+		<input type="text" id="elemento">
+		<br><br>
+		<input type="button" id="enviar" value='Enviar' onclick="borrar()">
+	</form>
+</div>
+</body>
+</html>
