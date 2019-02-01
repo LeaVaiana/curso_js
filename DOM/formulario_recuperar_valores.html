@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Document</title>
+    <script>
+        function out(){
+            var valor = document.getElementById("texto").value;//evento alert: cuando el cursor abandona el campo (dando un click fuera del campo sale la alert)
+            alert(valor);
+        }
+        
+        
+        function combo() {
+            //recupera el valor de la combo
+            var combo = document.getElementById("option").value;//evento alert: cuando seleziono una opzione
+            alert(combo);
+        } 
+    
+        function doble() {
+            //recupera el valor de la combo
+            var dblclick = document.getElementById("boton").value;//evento alert: cuando faccio doppio click su enviar
+            //escribe el valor en el input
+            alert(dblclick);
+        } 
+    
+    
+    </script>
+</head>
+<body>
+        <input type="text" id="texto" required onblur="out()"> <!--Tipo de Evento per formulario-->
+        <br><br>
+        <select id="option" onchange="combo()">
+				<option>Opt1</option>
+				<option>Opt2</option>
+				<option>Opt3</otpion>
+        </select>
+        <br><br>
+        <input type="button" value="Enviar" id="boton" ondblclick="doble()">
+
+
+    
+</body>
+</html>
