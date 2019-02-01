@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+            #contenedor{
+                text-align: center;
+            }
+
+            .caja {background-color:magenta;
+                width: 50px;
+                height: 50px;
+                display: inline-block;
+            }
+    </style>
+    <script>
+    window.onload=function(){
+                document.getElementById("caja1").addEventListener("click", alerta);
+                document.getElementById("caja2").addEventListener("dblclick", alerta);
+                document.getElementById("caja3").addEventListener("mouseover", alerta);
+               }  
+               function alerta(){
+                    alert("ciao");
+                } 
+    
+    </script>
+            
+</head>
+<body>
+    <div id="contenedor">
+        <div class="caja" id="caja1"></div>
+        <div class="caja" id="caja2"></div>
+        <div class="caja" id="caja3"></div>
+    </div>
+
+
+    
+</body>
+</html>
