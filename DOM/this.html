@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Document</title>
+    <script>
+        function salir(valor){//no necesita recuperar el value perche gli arriva dal parametro di entrata, alert e parametro stesso nome
+            alert(valor);
+        }
+        
+
+    
+    </script>
+</head>
+<body>
+        <input type="text" id="texto" required onblur="salir(this.value)"><!--envia el contenido del value de la etiqueta-->
+        <br><br>
+        <select id="option" onchange="salir(this.value)">
+				<option>Opt1</option>
+				<option>Opt2</option>
+				<option>Opt3</otpion>
+        </select>
+        <br><br>
+        <input type="button" value="Enviar" id="boton" ondblclick="salir(this.value)">
+
+
+    
+</body>
+</html>
