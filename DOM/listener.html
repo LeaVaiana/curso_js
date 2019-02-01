@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script>
+
+            /*opzione da non fare
+                function alerta(){
+                alert("hai fatto click")
+                }*/     
+                        
+            //con ADD EVENT LISTENER (evento, funzione) è la funzione che attiva un listener sopra l elemento selezionato
+               //questa istruzione si deve eseguire dopo che il navigatore renderizzi tutta la pagina
+               //se lasciamo lo script nell head aggiungere window onload per gli event listener:
+               
+                window.onload=function(){
+                document.getElementById("capa").addEventListener("click", alerta);
+                document.getElementById("enlace").addEventListener("mouseover", mouseover);
+               }   
+            
+             //evento sopra il div            
+                function alerta(){
+                    alert("hai fatto click");
+                    //disattivo la funzione
+                    document.getElementById("capa").removeEventListener("click", alerta);
+        
+                }
+            
+            //evento sopra il link
+                
+                function mouseover(){
+                    alert("mi sei passato di sopra")
+                }
+                            
+                            
+        </script>
+    
+</head>
+<body>
+
+        <div id="capa" style="background-color:blue; width:200px; height:50px" ><!--onclick="alerta()" da aggiungere per la prima opzione-->
+        </div>
+        <br> 
+        <a id="enlace" href=”#”>enlace</a><br>
+        <ul id="lista">
+            <li>Lista1</li>
+            <li>Lista2</li>
+        <ul>
+
+
+
+
+                    
+    
+</body>
+</html>
