@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        img{
+            width:600px;
+            height:300px;
+        }
+        body{
+            text-align:center;
+        }
+    </style>
+
+<script>
+
+    //crear array con el nombre de todas las imagenes de la galeria
+    var imagenes = new Array("img/punta_cana_1.jpg","img/punta_cana_2.jpg","img/punta_cana_3.jpg","img/punta_cana_4.jpg","img/punta_cana_5.jpg","img/punta_cana_6.jpg");
+    var imagen=0;//imagen que se muestra a cargar la pagina de indice 0
+
+    //activar los listener de los botones anterior y siguiente imagen (bisogna associargli gli eventi)
+    window.onload=function(){
+        document.getElementById("anterior").addEventListener("click", anterior);
+        document.getElementById("siguiente").addEventListener("click", siguiente);
+    }
+    
+    //definir las 2 funciones asociadas a los eventos(botones), la primera para avanzar, la otra para retroceder de una imagen
+        function anterior(){
+            //alert("anterior");
+
+            ////mostrar imagen anterior(si estamos en la primera se visualizará la ultima)
+            //elementos del array
+                if(imagen==0){
+                    imagen=5
+                }else{
+                    imagen --//contador
+                }
+            document.getElementById("imagen").src = imagenes[imagen];//cambio l'attributo src para mostrar un altra immagine
+            
+        }
+
+        function siguiente(){
+            //alert("siguiente");
+            //mostrar imagen siguiente(si estamos en la ultima se visualizará la primera)
+
+            //elementos del array
+            ultimoIndice = imagenes.length - 1;
+            if(imagen==ultimoIndice){
+                imagen=0
+            }else{
+                imagen ++//contador
+            }
+            document.getElementById("imagen").src = imagenes[imagen];//cambio l'attributo src para mostrar un altra immagine            
+        }
+
+        
+    </script>
+</head>
+<body>
+        <img id="imagen" src="img/punta_cana_1.jpg"><br><br>
+        <input type="button" id="anterior" value="<<">
+        <input type="button" id="siguiente" value=">>">
+</body>
+</html>
