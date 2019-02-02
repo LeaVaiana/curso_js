@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{
+            width: 300px;
+            height: 200px;
+            border: 1px solid black;
+        }
+        /*gli stili sotto funzionano solo in firefox se lavori con un MAC*/
+        select option[value='red'] { 
+            background-color:red;
+        }
+        select option[value='green'] { 
+            background-color:green;
+        }
+        select option[value='blue'] { 
+            background-color: blue;
+        }
+        select option[value='yellow'] { 
+            background-color:yellow;
+        }
+        
+    </style>
+
+    <script>
+        //activar listener cuando se cargue la pagina
+        window.onload=function(){
+            document.getElementById("colores").addEventListener("change", cambiaColor);
+        }
+
+        // funcion para cambiar color de la caja
+        function cambiaColor(){
+            // recuperar el valor de la combo 
+            var color = document.getElementById("colores").value
+             //cambiar el color de fondo de la caja
+             document.getElementById("caja").style.backgroundColor = color;
+
+        }
+    </script>
+</head>
+<body>
+    <div id="caja"></div>
+    <select id="colores">
+        <option>Scegli un colore</option>
+        <option value="red">rosso</option>
+        <option value="green">verde</option>
+        <option value="blue">blu</option>
+        <option value="yellow">giallo</option>
+    </select>
+    
+</body>
+</html>
