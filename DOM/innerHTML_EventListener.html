@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        #green {
+            background-color: rgb(154, 236, 154);
+            width: 400px;
+            height: 200px;
+        }
+    
+        #blue {
+            background-color: rgb(132, 178, 230);
+            width: 400px;
+            height: 200px;
+        }
+    </style>
+    
+    <title>Document</title>
+    <script>
+        //activar listeners cuando se carge la pagina
+        window.onload=function(){
+            //click en caja 1
+            document.getElementById("green").addEventListener("click", texto1)
+            //doble click en caja 2
+            document.getElementById("blue").addEventListener("dblclick", texto2)
+        }
+
+        //fuction click en caja1
+        function texto1(){
+            document.getElementById("blue").innerHTML +="click en la caja 1<br>"
+        }
+
+
+        //fuction click en caja2
+        function texto2(){
+            document.getElementById("green").innerHTML +="dblclick en la caja 2<br>"
+        }
+    </script>
+</head>
+<body>
+        <div id="green"></div>
+        <div id="blue"></div>
+</body>
+</html>
