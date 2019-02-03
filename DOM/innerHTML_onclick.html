@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+     #green {background-color:rgb(154, 236, 154);
+                width: 400px;
+                height: 200px;
+            }
+    #blue {background-color:rgb(132, 178, 230);
+                width: 400px;
+                height: 200px;
+            }
+    
+    
+    </style>
+    <script>
+        
+        function green(){
+            document.getElementById("green").innerHTML+="<div>Dblclick sulla caja blue</div>";;
+        }
+        function blue(){
+            document.getElementById("blue").innerHTML+="<div>Click sulla caja verde</div>";;
+        }
+     
+    </script>
+</head>
+<body>
+    <div id="green" onclick="blue()"></div>
+    <div id="blue" ondblclick="green()"></div>
+    
+</body>
+</html>
