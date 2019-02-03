@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		@font-face { 
+			font-family: caligrafica; 
+			src:url('font/RegencyScriptFLF.ttf'); 
+		} 
+		body {
+			background: black;	
+		}
+		div#pergamino {
+			width: 920px;
+			height: 680px;
+			background-image: url('img/pergamino.png');
+			margin: auto;
+			font-family: caligrafica;
+			padding: 150px;
+			font-size: 3em;
+			box-sizing:border-box;
+		}
+		form {
+			text-align: center;
+		}
+		textarea {
+			width: 700px;
+			height: 60px;
+		}
+	</style>
+	<script type="text/javascript">
+		//activar un listener en el text area
+		window.onload=function(){
+            //prendo valore dal text area
+            document.getElementById("texto").addEventListener("keyup", escribir);
+        }
+
+		//fuction click per prendere il texto dal textarea e copiarlo nel pergamino
+        function escribir(){
+			//recuperar el contenido del text area
+            var contenido= document.getElementById("texto").value;//para un textarea usar un value
+			//escribir el contenido en el pergamino solo quando lo user clicchi su enter (13), se voglio che si vada scrivendo, togliere la linea dell'if
+			if(event.which ==13){
+				document.getElementById("pergamino").innerHTML = contenido;//para el div usare innerHTML
+			}
+        }
+
+		
+	</script>
+</head>
+<body>
+	<form>
+		<textarea id="texto"></textarea>
+	</form><br>
+	<div id='pergamino'></div>
+</body>
+</html>
