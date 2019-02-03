@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function cambiaColor() {
+            document.getElementById("capa").style.background="yellow"; 
+            document.getElementById("capa").style.textAlign="left"; //non mettere "-" per gli stili composti, usare nomenclatura JS
+            document.getElementById("capa").style.border="3px solid red"; 
+        }
+    </script>
+</head>
+<body>
+        <div id="capa" style="background-color:blue; width:200px; height:50px; text-align:center">
+                <input type="button" value="Cliccami" onclick="cambiaColor()" />
+        </div>
+    
+</body>
+</html>
