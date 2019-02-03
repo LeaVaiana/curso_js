@@ -1,0 +1,66 @@
+<!doctype html>
+ <html>
+   <head>
+      <meta charset="utf-8"/>      
+      <title>Nave espacial</title>       
+      <style type="text/css">
+         body{
+            background-color:cyan;
+            overflow-x:hidden;
+         }
+         #nave{
+            position:absolute;
+            bottom:32px;
+            left:400px;
+         }
+        
+      </style>
+
+      <script type="text/javascript">
+
+         //posición inicial de la nave y listener del teclado
+         window.onload=function() {
+            x = document.getElementById("nave").offsetLeft;//ci dice la posizione lungo la x, si dichiarano senza il var, altrimenti non le vedo fuori la funzione
+            y = document.getElementById("nave").offsetTop;//ci dice la posizione lunga la y
+
+            //alert(x+ " " + y); ci dice la posizione iniziale di offsetLeft e offsetTop
+
+            //activare un listener para detectar la pulsacion de una tecla en todo el documento
+            document.addEventListener("keydown",moverNave);//al teclear keydown, qualsiasi tecla in questa funzione, si attiva la fuznione moverNave
+         };
+
+
+         
+         //función para mover la nave
+         function moverNave(event){
+            //alert("he llegado");
+
+            //averiguar la tecla pulsada con event.which
+            switch(event.which){
+               case 37://tasto freccia sinistra
+                  x = x - 10;
+                  break;
+               case 38:
+                  y = y - 10;
+                  break; 
+               case 39:
+                  x = x + 10;
+                  break;
+               case 40:
+                  y = y + 10;     
+            }      
+            //mostrar la nave en su nueva posición
+            document.getElementById("nave").style.left= x + "px";//px concateniamo la unitá
+            document.getElementById("nave").style.top= y + "px";
+                      
+         }
+         
+      </script>
+   </head>
+
+   <body>
+      <div id="nave">
+         <img src="img/nave.png" height="100">
+      </div>
+   </body>
+ </html>
