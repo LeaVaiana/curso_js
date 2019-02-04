@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #verde{
+            background-color: green;
+            height:300px;
+            width:300px;
+            position:relative;
+        }
+        #azul{
+            background-color: blue;
+            height:150px;
+            width:150px;
+            position:absolute;
+            top:75px;
+            left:75px;
+        }
+    
+    </style>
+<!--Link a jquery-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<!--link a javascript-->
+<script>
+    //Ejecutar la funcion inicio cuando se cargue la pagina, equivalente al window onload
+    $(inicio)
+
+    function inicio(){
+            //ACTIVAR UN EVENTO:seleziono e assegno funzione
+            $("#verde").on("click", green)
+            $("#azul").on("click", blue)
+        }
+
+
+        function green(){
+            alert("hai cliccato sul verde");
+        }
+
+        function blue(event){
+            //evitar che il click si propaghi alla caja contenedora STOP PROPAGATION!!!
+            event.stopPropagation();
+            alert("hai cliccato sul blu");
+        }
+
+
+
+</script>
+</head>
+<body>
+        <div id="verde">
+            <div id="azul"></div>
+        </div>
+</body>
+</html>
