@@ -23,11 +23,21 @@
     window.onload=function(){
         document.getElementById("anterior").addEventListener("click", anterior);
         document.getElementById("siguiente").addEventListener("click", siguiente);
+
+         //AÑADIR UN TEMPORIZADOR PARA QUE LAS IMAGENES AVANCEN CADA 3 SEGUNDOS(setInterval(funzione che si esegue, tiempo en milisegundos))
+        temporizador=setInterval("siguiente()",3000);
     }
+
+    
+     
     
     //definir las 2 funciones asociadas a los eventos(botones), la primera para avanzar, la otra para retroceder de una imagen
         function anterior(){
             //alert("anterior");
+
+            //paro y reinicio el temporizador
+            clearInterval(temporizador);
+            temporizador=setInterval("siguiente()",3000);
 
             ////mostrar imagen anterior(si estamos en la primera se visualizará la ultima)
             //elementos del array
@@ -42,6 +52,10 @@
 
         function siguiente(){
             //alert("siguiente");
+            //paro y reinicio el temporizador
+            clearInterval(temporizador);
+            temporizador=setInterval("siguiente()",3000);
+
             //mostrar imagen siguiente(si estamos en la ultima se visualizará la primera)
 
             //elementos del array
