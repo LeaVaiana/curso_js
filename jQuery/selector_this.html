@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<!--Link a jquery-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<!--link a javascript-->
+<script type="text/javascript">
+
+    $(ready)
+
+    function ready() {
+        $("a").click(mirarEnlace);//altri eventi: mouseover al posto del click, puó cambiare l'evento ma si applica sull'etichetta a
+    };
+    function mirarEnlace() {
+        $(this).html("Enlace pulsado");//detecta el ultimo enlace sobre el cual hemos hecho click
+    }
+
+</script>
+<body>
+        <a href="#" id="a1">Enlace 1</a>
+        <br> 
+        <a href="#" id="a2">Enlace 2</a>
+        <br> 
+        <a href="#" id="a3">Enlace 3</a>
+        <br>
+</body>
+</html>
