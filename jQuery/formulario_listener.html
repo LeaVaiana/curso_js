@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Document</title>
+
+    <!--almeno 2 scritp, uno per il jQuery dove copio il link dalla pagina ufficiale e l'altra per il JS-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    
+    
+    <script type="text/javascript">
+        //Ejecutar la funcion inicio cuando se cargue la pagina, equivalente al window onload
+        $(inicio) 
+
+        function inicio(){
+            //ACTIVAR UN EVENTO
+            $("input[type=button]").on("click", saludar)
+        }
+
+
+        function saludar(){
+            //recuperar valor de un formulario
+            var nombre = $("#campoNombre").val();
+            //alert(nombre);
+            //escribir el valor en otro campo con id
+            $("#campoNombre2").val(nombre);
+            //DESACTIVAR UN EVENTO
+            $("input[type=button]").off("click");
+        }
+
+    </script>
+
+</head>
+<body>
+
+        <form>
+                <label>Escribe tu nombre: </label>
+                <input type="text" id="campoNombre">
+                <input type="button" value="Enviar formulario">
+                <input type="text" id="campoNombre2">
+
+        </form>
+    
+</body>
+</html>
