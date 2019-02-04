@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        function calcular(){
+            //recuperare i due numeri (numeratore e denominatore)
+            var num1 = $("#num1").val();
+            var num2 = $("#num2").val();
+            //validar que num1 y num2 esté informados (la validazione va fatta prima di eseguire l'operazione)
+            
+            //Enviamos a JS toda la etiqueta input con tutti i suoi attributi attivi
+            var inputNumerador = document.getElementById("num1") //toda la etichetta!
+            if (!inputNumerador.checkValidity()){//prendi l'oggetto e comprueba tutti gli attributi per vedere se passa la validazione (true)
+                alert(inputNumerador.validationMessage)//se non supera la validazione andiamo all'attributo validationMessage e mi appare il messaggio del campo required
+                document.getElementById("num1").style.border="1px solid green";//si además quieres cambiar el color del campo para indicar que es el campo que hay que rellenar puedo cambiar el estilo css
+                return
+            }
+
+            var inputDenom = document.getElementById("num2") 
+            if (!inputDenom.checkValidity()){ 
+                alert(inputDenom.validationMessage);
+                document.getElementById("num2").style.border="1px solid green";
+                return
+            }
+
+            
+            //recuperare la operazione
+            var operacion = $("#oper").val();
+
+            var inputOper = document.getElementById("oper") //toda la etichetta!
+            if (!inputOper.checkValidity()){//prendi l'oggetto e comprueba tutti gli attributi per vedere se passa la validazione (true)
+                alert(inputOper.validationMessage)//se non supera la validazione andiamo all'attributo validationMessage e mi appare il messaggio del campo required
+                return
+            }
+
+            if(operacion =="0"){
+                alert("selecciona operacion")
+            }
+
+            //realizzare il calcolo (con swith opz 3)
+            var resultado = eval(num1 + operacion + num2); //Opcion 1: EVAL: concatena le 3 variabili risultando in una operazione JS eseguibile, in questo caso non è necessario mettere il parseInt come per un if o switch!!!
+            //ENVIARE EL RESULTADO AL FORMULARIO
+            document.getElementById("resultado").value= resultado;
+        }
+        
+    </script>
+</head>
+
+<body>
+    <form>
+        <input type="number" id="num1" required>
+        <select id="oper" required>
+            <option disabled selected value="0">Operación</option>
+            <option>+</option>
+            <option>-</option>
+            <option value='*'>X</option> <!--Lo user vede la X ma a JS arriva *-->
+            <option>/</option>
+        </select>
+        <input type="number" name="den" id="num2" required>
+        <span></span>
+        <input type="text" id="resultado" disabled><!--cosí lo user non puó scrivere in questo campo-->
+        <br><br>
+        <input type="button" value="calcular" onclick="calcular()">
+    </form>
+
+
+
+</body>
+
+</html>
