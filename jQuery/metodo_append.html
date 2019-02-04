@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<!--Link a jquery-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<!--link a javascript-->
+    <script>
+        function anadeHtml() {
+            //in JS: document.getElementById("capa").innerHTML+='nuevo contenido'
+            $("#capa").append('<button>Nuevo botón</button>');//aggiungere senza sostituire
+            
+            //PREPEND
+            //$("#capa").prepend('<button>Nuevo botón</button>');añade nuevo contenido antes del existente
+
+        }
+    </script>
+</head>
+<body>
+    <div id="capa" style="background-color:yellow; width:200px; height:50px; text-align:center">
+        <a href='#' onclick="anadeHtml()">Pulsa en este enlace</a>
+    </div>
+</body>
+</html>
