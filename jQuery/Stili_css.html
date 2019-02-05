@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+	<style type="text/css">
+		div.script {
+			display: block;
+			background-color: white; 
+			color: black;
+			width: 700px;
+			padding: 25px;
+			margin: 5px auto auto auto;
+			box-sizing: border-box;	
+			text-align: left;
+			border: 2px solid black;
+			border-radius: 25px;
+		}
+		h1 {
+			color: green;
+			background: white;
+			font-family: arial;
+			border: 1px solid black;
+		} 
+	</style>
+
+<!--Link a jquery-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+
+<!--link a javascript-->
+<script type="text/javascript">
+
+	$(inicio)
+
+	//definisco i 3 listener
+
+	function inicio() {
+		$("#primer").on("click", yellow);
+		$("#segundo").on("click", red);
+		$("#deshacer").on("click", limpiar);
+	}
+
+	//definir funcion yellow 
+	function yellow() {
+		$("#primer").css({ "background-color": "yellow", "color": "red" });
+	}
+
+	//definir funcion red
+	function red() {
+		$("#segundo").css({ "background-color": "red", "color": "yellow" });
+	}
+
+	//definir funcion limpiar;
+	function limpiar() {
+		$("#primer,#segundo").css({ "background-color": "white", "color": "green"});
+		//$("h1").css({ "background-color": "white", "color": "green"});
+	}
+</script>
+</head>
+<body>
+	<div class="script">
+		<h1 id="primer">Primer texto</h1>
+		<h1 id="segundo">Segundo texto</h1>
+		<h1 id="deshacer">Limpiar</h1>
+	</div>
+</body>
+</html> 
