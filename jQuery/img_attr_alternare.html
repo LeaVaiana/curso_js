@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <!--Link a jquery-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+
+    <!--link a javascript-->
+    <script type="text/javascript">
+
+	$(inicio)
+
+	//definisco listener boton cambiar
+	function inicio() {
+		$("#elefante").on("click", alternar);
+	}
+
+    //imagen inicial
+    var imagen = 1; //immagine che vede lo user in questo momento
+	
+    //definir funcion elefante alternar
+	function alternar() {
+        if(imagen == 1){
+            $("img").attr("src","img/elefante2.jpg");//devo selezionare img, perchè è l¡immagine che voglio cambiare non il botton
+            imagen = 2;//quindi l'immagine che visualizziamo gli assegniamo il valore 2
+        }else{
+            $("img").attr("src","img/elefante1.gif");
+            imagen = 1;
+        }
+	}
+
+
+</script>
+
+</head>
+<body>
+    <center>
+            <img src="img/elefante1.gif">
+            <br><br>
+            <input type="button" value="cliccami" id="elefante">
+
+    </center>
+ 
+</body>
+</html>
