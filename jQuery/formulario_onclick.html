@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Document</title>
+
+    <!--almeno 2 scritp, uno per il jQuery dove copio il link dalla pagina ufficiale e l'altra per il JS-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    
+    <!--Para comprobar si la librería se ha importado correctamente en el documento web:-->
+    <script type="text/javascript">
+        $(document).ready(function(){
+            alert("JQuery OK"); 
+            });
+    </script>
+    
+    <script>
+        function saludar(){
+            //recuperar valor de un formulario
+            var nombre = $("#campoNombre").val();
+            //alert(nombre);
+            //escribir el valor en otro campo con id
+            $("#campoNombre2").val(nombre);
+            //escribir el valor en otro campo con class
+            $(".campoNombre2").val(nombre);
+        }
+
+
+    </script>
+
+</head>
+<body>
+
+    <form>
+        <label>Escribe tu nombre: </label>
+        <input type="text" id="campoNombre">
+        <input type="button" value="Enviar formulario" onclick="saludar()">
+        <input type="text" id="campoNombre2">
+        <input type="text" class="campoNombre2">
+
+    </form>
+
+</body>
+</html>
