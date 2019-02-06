@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+	<style type="text/css">
+		table, td {
+			border: 1px solid black
+		}
+	</style>
+
+	<!--Link a jquery-->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	
+
+	<!--link a javascript-->
+	<script type="text/javascript">
+	
+	$(ready)
+
+	//listener
+	function ready(){
+	$("tr").on("click", colorear) //LO APPLICO A TUTTI I TR
+	}
+
+	function colorear(){
+		//opcion1
+		//$("td").css({ "background-color": "white", "color": "black" });//seleziono tutta la tavola, tutti i td
+		//$(this).find("td").css({ "background-color": "blue", "color": "white" })//seleziono solo i td dove ho fatto
+	
+		//opcion 2 piú facile 
+		$("tr").css({ "background-color": "white", "color": "black" });//tutti i tr per difetto sono bianchi
+		$(this).css({ "background-color": "blue", "color": "white" }); //il tr che chiamo con il listener e su cui clicco si colora di blu
+
+	}
+	</script>
+
+</head>
+<body>
+	<div class="script">
+		<table>
+			<tr><td>111111111</td><td>111111111</td><td>111111111</td><td>111111111</td></tr>
+			<tr><td>222222222</td><td>222222222</td><td>222222222</td><td>222222222</td></tr>
+			<tr><td>333333333</td><td>333333333</td><td>333333333</td><td>333333333</td></tr>
+			<tr><td>444444444</td><td>444444444</td><td>444444444</td><td>444444444</td></tr>
+		</table>
+	</div>
+</body>
+</html> 
