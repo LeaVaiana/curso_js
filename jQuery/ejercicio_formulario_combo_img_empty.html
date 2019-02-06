@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+	<style type="text/css">
+		
+		div.wraper {
+			display: block;
+			background-color: white; 
+			color: black;
+			width: 1000px;
+			padding: 25px;
+			margin: 5px auto auto auto;
+			box-sizing: border-box;	
+			text-align: left;
+			border: 2px solid black;
+			border-radius: 25px;
+		}
+		div#imagen {
+			width: 250px;
+			height: 220px;
+			border: 2px solid gold;
+			padding: 10px;
+			display: inline-block;
+			margin-left: 10px;
+			vertical-align: top;
+		}
+
+		#imagen img {
+			width: 250px;
+		}
+		div.resultado {
+			height: 150px;
+			color: green;
+			box-sizing: border-box;
+			background-color: pink;
+			font-size: 5em;
+			padding: 20px;
+		}
+		label {
+			width: 180px;
+			display: inline-block;
+			vertical-align: top;
+		}
+		#resultado {
+			width: 650px;
+			height: 50px;
+			background-color: grey
+		}
+		form {
+			display: inline-block;
+			vertical-align: top;
+		}
+	</style>
+	<script>
+		//cuando se cargue la página activamos los listeners:
+		$(inicio)
+
+		function inicio() {
+		//activar listener botón de enviar formulario evento click
+		$("input[type=button]").on("click", enviar); //anche $("enviar").on("click", enviar);
+		//activar listener de la combo de monedas evento change
+		$("#monedas").on("change", monedas);
+		}
+			
+
+		//definir función de tratar formulario
+		function enviar(){	
+
+			//recuperar nombre y dirección con il val per un campo de input
+			var name=$("#nombre").val();
+			var direccion=$("#direccion").val();
+
+			//validar nombre y direccion con javascript
+			//opz1 validacion con if
+			/*if(nombre.trim()==""||direccion.trim()==""){ //la funzione trim elimina gli spazi bianchi, cosí lo user non puó usarlo come carattere
+				alert("nombe y direccion obligatorios");
+				return
+			}
+			*/
+			
+			var inputName = document.getElementById("nombre")
+            if (!inputName.checkValidity()){
+                alert(inputName.validationMessage)
+                document.getElementById("nombre").style.border="1px solid green";
+                return
+			}
+			
+			var inputDireccion = document.getElementById("direccion")
+            if (!inputDireccion.checkValidity()){
+                alert(inputDireccion.validationMessage) 
+                document.getElementById("direccion").style.border="1px solid green";
+                return
+            }
+
+			//recuperar moneda (nos llegará el contenido del atributo value) dalla combo, l'attributo value, 000 se non è selezionata nessuna moneta
+			var moneda=$("#monedas").val(); // nos llega el value associato all'etichetta option
+			//alert(moneda);
+			
+			//validar que se ha seleccionado una moneda, la non selezione è il 000
+			if (moneda=="000"){
+				alert("devi selezionare una moneta");
+				return
+			}
+
+			//confeccionar el mensaje de respuesta (DEBE APARECER LA DESCRIPCIÓN DE LA MONEDA, che si trova tra le etichette option)
+			var description=$("option:selected").text()
+			//alert(description)
+
+			var mensaje="Si invierá la moneta" + description + "a la direccion" + direccion
+			//enviar el mensaje al div con id 'resultado' metodo .html in jquery
+			$("#resultado").html(mensaje);
+		};
+		
+		
+
+		//definir función de mostrar imagen de la moneda
+			function monedas(){
+			//recuperar moneda (nos llegará el contenido del atributo value)
+			var moneda=$("#monedas").val();
+
+			if(moneda!="000"){
+				//confeccionar una etiqueta <img> para mostrar la moneda que corresponda a la selección, inserisco una etichetta img dentro del div
+				var imagen = "<img src='img/" + moneda + ".jpg'>"
+
+				//enviar la etiqueta <img> al div con id 'imagen'
+				$("#imagen").html(imagen)
+				}else{
+					$("#imagen").empty();
+				}
+			}
+
+	</script>
+</head>
+<body>
+	<div class="wraper">
+		<form name='formulario'>
+			<label>Nombre y apellidos</label>
+			<input type='text' id='nombre' required><br><br>
+			<label>Dirección</label>
+			<input type='text' id='direccion' required><br><br>
+			<label>Eliga una moneda</label>
+			<select id='monedas' required>
+				<option value='000'>Seleccione una moneda</option>
+				<option value='039'>1 peseta 1a república</option>
+				<option value='053'>8 escudos Felipe V</option>
+				<option value='055'>5 céntimos escudo Isabel II</option>
+				<option value='079'>5 quarts Fernando VII</option>
+				<option value='097'>200 pesetas JCI rara</option>
+			</select>
+			<br><br>
+			<input type="button" id="enviar" Value="Enviar"><br><br>
+			<div id="resultado"></div>
+		</form>
+		<div id='imagen'></div>
+	</div>
+</body>
+</html> 
