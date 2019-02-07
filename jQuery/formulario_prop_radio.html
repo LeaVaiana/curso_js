@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+	<script>
+		
+		//listener del botón del formulario comprobar respuesta al cargar la pagina
+		$(inicio)
+
+		function inicio(){
+    		$("#respuesta").on("click", respuesta)
+		}
+
+		//function de tratar respuesta
+		function respuesta(){
+			//recuperar el valor del radio seleccionado
+			var respuesta = $("input[type=radio]:checked").val();//recuperar el valor de un radio button
+						//alert(radio)
+			
+				//validar que se ha seleccionado un radio
+				if (respuesta == undefined){//se non abbiamo selezionato niente
+					alert("selecciona respuesta")
+				}
+
+			//si es respuesta correcta:
+			if(respuesta==2){
+				//mostrar un mensaje
+				alert("corretto!")
+				//desactivar todos los radios
+				$('input[type=radio]').prop("disabled", true);//attiviamo la proprieta disabled
+				//-->desactivar el boton de envio
+				$("#respuesta").prop("disabled", true);
+
+			}else{//si respuesta incorrecta:
+				//mostrar un mensaje
+				alert("Prova di nuovo")
+				//desactivar el radio marcado
+				$('input[type=radio]:checked').prop("disabled", true);
+				//quitar la seleccion de radio marcado
+				$('input[type=radio]:checked').prop("checked", false);	
+			}		
+		}
+
+		
+		
+    </script>
+    <style type="text/css">
+    	form {
+    		width: 300px;
+    		padding: 20px;
+    		border: 3px solid gold;
+    		border-radius: 15px;
+    		margin: auto;
+    	}
+    	input[type='radio'] {
+    		margin-right: 10px;
+    	}
+    </style>
+</head>
+<body>
+	<form>
+		<h3>¿Qué es JQuery?</h3>
+		<input type="radio" name="radio" id="r1" value="1">Un lenguaje de programación<br><br>
+		<input type="radio" name="radio" id="r2" value="2">Una librería de JavaScrit<br><br>
+		<input type="radio" name="radio" id="r3" value="3">Una herramienta de desarrollo<br><br>
+		<input type="radio" name="radio" id="r4" value="4">Una marca de coches<br><br>
+		<input type='button' value='Comprobar respuesta' id='respuesta'>
+	</form>
+</body>
+</html>

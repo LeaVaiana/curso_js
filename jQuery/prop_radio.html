@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<!--Link a jquery-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	
+
+<!--link a javascript-->
+<script type="text/javascript">
+
+$(inicio)
+
+function inicio(){
+    //activar un radio button
+    $("#r1").prop("checked", true) //quando si carica la pagina sará il radio button attivo
+}
+
+function verRadios(){
+    var radio = $("input[type=radio]:checked").val();//recuperar el valor de un radio button
+    alert(radio)
+}
+
+</script>
+
+<body>
+    <form>
+        <input type="radio" name="radio" value="radio1" id="r1">
+        <input type="radio" name="radio" value="radio2" id="r2">
+        <input type="radio" name="radio" value="radio3" id="r3">
+        <br>
+        <input type="button" id="radiosname=" value="ver" onclick="verRadios()">
+
+
+
+    </form>
+    
+</body>
+</html>
