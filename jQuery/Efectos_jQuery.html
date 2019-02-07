@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jquery Hide effect</title>
+    <style type="text/css">
+    div{width: 600px; height: 300px; background-color: blue}
+    </style>
+    <!--Link a jquery-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+    //Bisogna considerare che alla fine dell'effetto otteniamo un display none, significa che si libera lo spazio
+    
+    //HIDE: Encoje la caja y difumina el color
+    function efecto1(){
+        $("#contenedor").hide(2000, "swing") //swing o linear
+    }
+
+    /*se vogliamo aggiungere come terzo parametro una funzione callback mostrarAlerta, poi bisogna definirla
+    function mostrarAlerta(){
+        alert("efecto completado")
+    }*/
+
+    //SHOW, funziona con display none o dopo un effetto hide
+    function efecto2(){
+        $("#contenedor").show(1000, "swing")
+    }
+
+    //toggle alterna hide con show
+    function efecto3(){
+        $("#contenedor").toggle(1000, "swing")
+    };  
+    //slideup y slidedown
+    function efecto4(){
+        $("#contenedor").slideUp(1000, "swing")
+    };  
+    //fadeOut
+    function efecto5(){
+        $("#contenedor").fadeOut(2000, "swing")
+    };  
+    //fadeTo (secondo parametro opacitá per caja e contenuto)
+    function efecto6(){
+        $("#contenedor").fadeTo(2000,0.5,"swing")
+    };  
+    //fadeToggle (combina tra fadein e fadeout)
+    function efecto7(){
+        $("#contenedor").fadeToggle(2000,"swing")
+    };  
+
+
+    
+
+
+</script>
+</head>
+<body>
+    <div id="contenedor"></div>
+    <input type="button" value="hide" onclick="efecto1()">
+    <input type="button" value="show" onclick="efecto2()">
+    <input type="button" value="toggle" onclick="efecto3()">
+    <input type="button" value="slideUp" onclick="efecto4()">
+    <input type="button" value="fadeOut" onclick="efecto5()">
+    <input type="button" value="fadeTo" onclick="efecto6()">
+    <input type="button" value="fadeToggle" onclick="efecto7()">
+</body>
+</html>

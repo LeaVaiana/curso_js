@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery User Interface</title>
+    <!--Libreria jQuery-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!--Libreria a jQuery UI, download solo file e teme che interessano-->
+    <script type="text/javascript" src="jquery-ui/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="jquery-ui/jquery-ui.structure.css">
+    <link rel="stylesheet" type="text/css" href="jquery-ui/jquery-ui.theme.css">
+
+    <script type="text/javascript">
+    $(inicio)
+
+
+     // per configurare il calendario
+     $.datepicker.regional['es'] = {
+             closeText: 'Cerrar',
+             prevText: '< Ant',
+             nextText: 'Sig >',
+             currentText: 'Hoy',
+             monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+             monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
+             dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+             dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
+             dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
+             weekHeader: 'Sm',
+             dateFormat: 'dd/mm/yy',
+             firstDay: 1,//lunes
+             isRTL: false,
+             showMonthAfterYear: false,
+             numberOfMonths: 2,//numero di mesi
+             yearSuffix: ''
+      };
+      $.datepicker.setDefaults($.datepicker.regional['es']);
+
+      function inicio(){
+        $("#calendario2").datepicker()
+    }
+    </script>
+
+
+</head>
+<body>
+    <input type="date" id="calendario1"><!--calendario dell'HTML-->
+    <input type="text" id="calendario2"><!--lo convertiamo in calendario con JQuery UI-->
+
+    
+</body>
+</html>
