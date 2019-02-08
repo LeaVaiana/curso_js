@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!--Link a jquery-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!--link a javascript-->
+    <script type="text/javascript">
+
+    
+    //crear un array vacio para ir guardando los elementos de la lista
+    lista = new Array(); 
+
+        //Eseguire la funzione inicio quando si carichi la pagina e attivare i listeners sui due bottoni
+        $(inicio) 
+
+        function inicio(){
+            $("#anadir").on("click", anadir);
+            $("#borrar").on("click", borrar);  
+        }
+
+        //function ver per recuperare il valore dela lista
+        function ver(){
+            var opcion = $(this).text()//seleziono l'elemento, la funzione ver agisce su li, e recupero il suo contenuto texto
+            alert(opcion)
+        }
+
+
+        //definir funcion añadir elemento 
+            function anadir() {
+                //recuperar valor de un formulario
+                var elemento = $("#elemento").val();
+                //alert(elemento);
+
+                //comprobar si el dato existe en el array
+                var indice = lista.indexOf(elemento);
+                //si no existe añadir el dato recuperado en el array
+                if (indice == -1) {//se è -1, elemento non esistente, lo aggiungo
+                    $("#lista").append("<li>" + elemento + "</li>")
+                    //crear listener etiqueta li, non l'abbiamo creata nella funcion inicio perche questa etichetta non esiste al cargar la pagina
+                    $("li").off("click", ver)//prima di attivare il listener bisogna aggiungere la disattivazione per non accumulare listeners
+                    $("li").on("click", ver)//per detectar cuando si fa un click sopra un elemento della lista
+                    lista.push(elemento)
+                } else {
+                    alert("elemento ya existe")
+                }
+
+                //borrar el contenido del input cada vez que añadimos un elemento
+                $("#elemento").val("");
+                //situar el cursor dentro del input
+                $("#elemento").focus();
+            }
+        
+        //definir funcion borrar lista 
+        function borrar(){
+            //vaciar la lista (seleciono la lista y la vacio)
+            $("#lista").empty();
+            //borrar el array
+            lista = [];
+        }
+
+    </script>
+    
+</head>
+
+<body>
+    <input type="text" id="elemento">
+    <input type="button" id="anadir" value="Añadir elemento">
+    <input type="button" id="borrar" value="Borrar lista">
+    <br><br>
+    <ul id="lista">
+    </ul>
+</body>
+
+</html>
