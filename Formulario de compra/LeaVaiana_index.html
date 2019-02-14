@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/page.css" type="text/css" />
+    <script type="text/javascript" src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+    <script type="text/javascript">
+
+    //(2)crear dos array vacios para ir guardando los elementos de las filas en la tabla con el id=’lista’
+    lista = new Array(); 
+    arrayPrecio= new Array();
+
+    //cuando se cargue la página activamos los listeners:
+		$(inicio)
+
+        function inicio() {
+		//activar listener botón de enviar formulario evento click
+        $("#enviar").on("click", enviar);
+		//activar listener de la combo de camisetas evento change
+		$("#color").on("change", color);
+        //(2)activar listener añadir lista
+        $("#alta").on("click", anadir);
+		}
+
+    //(2)function ver para recuperar valor lista
+    function ver(){
+            var opcion = $(this).text()//recupero contenido de la lista
+            //alert(opcion); detecta que hago click encima de la X
+        }
+
+    
+    //(2)definir funcion borrar lista 
+    function borrar(){
+        var position=$(this).closest("tr").index();
+        lista.splice(position, 1);
+        arrayPrecio.splice(position,1);
+        $(this).closest("tr").remove();
+
+        }
+
+        //definir función de tratar formulario
+        function enviar(){
+            //recuperar nombre, direccion, cantidad
+            var name=$("#nombre").val();
+			var direccion=$("#direccion").val();
+            var cantidad=parseInt($("#cantidad").val(),10);
+            //alert(cantidad);
+
+            //validar nombre, direccion, cantidad con Javascript
+            var inputName = document.getElementById("nombre")
+            if (!inputName.checkValidity()){
+                alert(inputName.validationMessage)
+                document.getElementById("nombre").style.backgroundColor="yellow";
+                return
+			}else{
+                document.getElementById("nombre").style.backgroundColor="white";
+            }
+
+            var inputDireccion = document.getElementById("direccion")
+            if (!inputDireccion.checkValidity()){
+                alert(inputDireccion.validationMessage) 
+                document.getElementById("direccion").style.backgroundColor="yellow";
+                return
+            }else{
+                document.getElementById("direccion").style.backgroundColor="white";
+            }
+
+            var inputCantidad = document.getElementById("cantidad")
+            if (!inputDireccion.checkValidity()){
+                alert(inputDireccion.validationMessage) 
+                document.getElementById("cantidad").style.backgroundColor="yellow";
+                return
+            }
+            //recuperar talla
+            var talla = $("input[type=radio]:checked").val();
+            //alert(talla)
+
+            //recuperar color
+			var color=$("#color").val();
+			//alert(color);
+
+            //recuperar el valor seleccionado
+			var description=$("option:selected").text()
+			//alert(description)
+
+            //recuperar precio 
+            var precio = cantidad * description;
+
+            if (description == "blanca") {
+                precio = cantidad * 10
+            } else { precio = cantidad * 12 };
+            //alert(precio);
+
+
+            //confeccionar mensaje de respuesta
+			var mensaje= name + " ha comprado " + cantidad + " camisetas " + description + " y talla " + talla + "." + " Se enviará la camiseta " + description + " a la direccion " + direccion + ". " + "Precio total: " + precio;
+			//enviar el mensaje al div con id 'resultado' metodo .html in jquery
+			$("#resumen").html(mensaje);
+        };
+        
+
+
+
+    //definir función para mostrar imagen de la camiseta
+			function color() {
+                    //recuperar color
+                    var color = $("#color").val();
+                    //alert(color)
+
+                    //confeccionar una etiqueta <img> para mostrar la camiseta que corresponda a la selección
+                    var imagen = "<img src='img/" + color + ".png'>"
+                    //enviar la etiqueta <img> al div con class 'info2'
+                    $(".info2").html(imagen)
+                }
+
+    //(2)definir funcion añadir elemento
+
+    function anadir(){
+        var elemento = $("#articulo").val();//el usuario pone un valor y lo volvemos a encontrar en la tabla que se forma abajo
+        //alert(elemento);
+
+        var precioUser = $("#precio").val();//el usuario pone un valor y lo volvemos a encontrar en la tabla que se forma abajo
+        //alert(precioUser);
+
+        //comprobar si el dato existe en el array
+        var indice = lista.indexOf(elemento);
+                //si no existe añadir el dato recuperado en el array
+                if (indice == -1) {
+                    $("#lista").append("<tr>" + "<td>" + elemento + "</td>" + "<td>" + precioUser + "</td>" + "<td class='borrar'>" + "X" + "</td>" + "</tr>")
+                    //crear listener etiqueta td
+                    $("td").off("click", ver);
+                    $("td").on("click", ver);
+                    lista.push(elemento);
+                    arrayPrecio.push(precioUser);
+                } else {
+                    alert("elemento ya existe")
+                    return
+                }
+                //llamo funcion borrar
+                $(".borrar").off("click", borrar)
+                $(".borrar").on("click", borrar)
+    }
+
+
+		
+    </script>
+</head>
+<body>
+    <div class='contenedor'>
+        <section>
+            <div class='info1'>
+                <form name='formulario'>
+                    <label>Nombre y apellidos</label>
+                    <input type='text' id='nombre' required><br><br>
+                    <label>Dirección</label>
+                    <input type='text' id='direccion' required><br><br>
+                    <label>Cantidad</label>
+                    <input type='number' id='cantidad' value='1' min='1' required><br><br>
+                    <label>Seleccione talla:</label>
+                    XS<input type='radio' name='talla' checked value='XS'>
+                    S<input type='radio' name='talla' value='S'>
+                    M<input type='radio' name='talla' value='M'>
+                    L<input type='radio' name='talla' value='L'>
+                    XL<input type='radio' name='talla' value='XL'><br><br> 
+                    <label>Seleccione color:</label>
+                    <select id='color'>
+                        <option value='camiseta_blanca'>blanca</option>
+                        <option value='camiseta_amarilla'>amarilla</option>
+                        <option value='camiseta_naranja'>naranja</option>
+                        <option value='camiseta_roja'>roja</option>
+                        <option value='camiseta_verde'>verde</option>
+                        <option value='camiseta_azul'>azul</option>
+                        <option value='camiseta_negra'>negra</option>
+                    </select><br><br> 
+                    <input type='button' id='enviar' value='Enviar'><br><br>
+                    <div id='resumen'></div>
+                </form>
+            </div>
+            <div class='info2'>   
+                <img id='camiseta' src='img/camiseta_blanca.png'>
+            </div>
+        </section>
+        <section>
+            <form>
+            	<label>Artículo</label>
+            	<input type='text' id='articulo' required>
+            	<label>Precio</label>
+            	<input type='number' id='precio' required min='0'>
+            	<input type='button' id='alta' value='Alta artículo'>
+            </form><br><br>
+            <div>
+            	<table id='lista'></table>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
